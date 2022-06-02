@@ -20,17 +20,13 @@ const createTask = (evento) => {
   titleTask.innerText = value;
   taskContent.appendChild(checkComplete());
   taskContent.appendChild(titleTask);
-
-  // ------------>
-  const content = `
-    <i class="fas fa-trash-alt trashIcon icon"></i>`;
+  taskContent.appendChild(deleteIcon());
   // task.innerHTML = content;
-  // ------------>
 
-  task.appendChild(taskContent)
+  task.appendChild(taskContent);
+  task.appendChild(deleteIcon());
   list.appendChild(task);
 };
-
 
 // arrow functions
 btn.addEventListener("click", createTask);
@@ -42,7 +38,6 @@ const checkComplete = () => {
   return i;
 };
 
-
 // IIFE: Immediately Invoked Function Expression
 const completeTask = (event) => {
   const element = event.target
@@ -51,4 +46,17 @@ const completeTask = (event) => {
   element.classList.toggle("far");
 };
 
-})();
+const deleteIcon = () => {
+  const content = `
+  <i class="fas fa-trash-alt trashIcon icon"></i>`;
+  const i = document.createElement("i");
+  i.classList.add("fas", "fa-trash-alt", "trashIcon", "Icon");
+  i.addEventListener("click", deleteTask)
+  return i;
+};
+
+const deleteTask = () => {
+  console.log("Eliminar tarea")
+};
+
+}) ();
