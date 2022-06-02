@@ -1,29 +1,54 @@
-const btn = document.querySelector("[data-form-btn]");
+(() => {
+  const btn = document.querySelector("[data-form-btn]");
 console.log(btn);
 
+// función agregar tarea en lista de tareas
 const createTask = (evento) => {
-    evento.preventDefault()
-    const input = document.querySelector("[data-form-input]");
-    const value = input.value;
-    const list = document.querySelector("[data-list]")
-    const task = document.createElement("li");
-    task.classList.add("card");
-    input.value = "";
+  evento.preventDefault(); /* no recargar página */
 
-    const content = `<div>
-    <i class="far fa-check-square icon"></i>
-    <span class="task">${value}</span>
-  </div>
-  <i class="fas fa-trash-alt trashIcon icon"></i>`;
+  const input = document.querySelector("[data-form-input]");
+  const value = input.value; // valor agregado por usuario
+  const list = document.querySelector("[data-list]");
+  const task = document.createElement("li"); // tarea como elemento de la lista
+  task.classList.add("card");
+  input.value = "";
 
-  task.innerHTML = content;
+  const taskContent = document.createElement("div");
+  const titleTask = document.createElement("span");
 
-    list.appendChild(task);
+  titleTask.classList.add("task");
+  titleTask.innerText = value;
+  taskContent.appendChild(checkComplete());
+  taskContent.appendChild(titleTask);
 
-    console.log(content);
-}
+  // ------------>
+  const content = `
+    <i class="fas fa-trash-alt trashIcon icon"></i>`;
+  // task.innerHTML = content;
+  // ------------>
 
-console.log(btn);
+  task.appendChild(taskContent)
+  list.appendChild(task);
+};
+
 
 // arrow functions
 btn.addEventListener("click", createTask);
+
+const checkComplete = () => {
+  const i = document.createElement("i");
+  i.classList.add("far","fa-check-square" , "icon");
+  i.addEventListener("click", completeTask)
+  return i;
+};
+
+
+// IIFE: Immediately Invoked Function Expression
+const completeTask = (event) => {
+  const element = event.target
+  element.classList.toggle("fas");
+  element.classList.toggle("completeIcon");
+  element.classList.toggle("far");
+};
+
+})();
