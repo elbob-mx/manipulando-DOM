@@ -1,3 +1,5 @@
+// tarea completada icon interactivo
+
 const checkComplete = () => {
   const i = document.createElement("i");
   i.classList.add("far", "fa-check-square", "icon");

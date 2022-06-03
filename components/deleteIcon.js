@@ -1,3 +1,5 @@
+// eliminar tarea
+
 const deleteIcon = () => {
   const content = `
   <i class="fas fa-trash-alt trashIcon icon"></i>`;
