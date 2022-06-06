@@ -10,7 +10,9 @@ const addTask = (evento) => {
   const list = document.querySelector("[data-list]");
   const task = createTask(evento);
   list.appendChild(task);
-}
+};
+
+const taskList = [];
 
 // función agregar tarea en lista de tareas
 const createTask = (evento) => {
@@ -33,7 +35,9 @@ const createTask = (evento) => {
     dateFormat
   };
 
-  sessionStorage.setItem("tasks", JSON.stringify(taskObj));
+  taskList.push(taskObj);
+
+  localStorage.setItem("tasks", JSON.stringify(taskList)); // localStorage solo admite 'strings'
 
   const titleTask = document.createElement("span");
   titleTask.classList.add("task");
