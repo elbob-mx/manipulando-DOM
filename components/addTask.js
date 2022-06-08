@@ -13,6 +13,12 @@ export const addTask = (evento) => {
   const value = input.value; // valor agregado por usuario
   const date = calendar.value; // valor del input calendario
   const dateFormat = moment(date).format("DD/MM/YYYY"); //formato fecha en el momento actual
+
+  if( value === "" || date === ""){
+    alert("Proporciona tarea y fecha correctos.");
+    return
+  };
+
   input.value = ""; // valor inicial
   calendar.value = "";
 
@@ -23,7 +29,6 @@ export const addTask = (evento) => {
 
   const taskList = JSON.parse(localStorage.getItem("tasks")) || []; //si hay 'tareas', si no, array vacío
   taskList.push(taskObj);
-
   localStorage.setItem("tasks", JSON.stringify(taskList)); // localStorage solo admite 'strings'
 
   const task = createTask(taskObj); //crear tarea
@@ -31,7 +36,7 @@ export const addTask = (evento) => {
 };
 
 // función agregar tarea en lista de tareas
-const createTask = ({ value, dateFormat }) => {
+export const createTask = ({ value, dateFormat }) => {
   const task = document.createElement("li"); // tarea como elemento de la lista
   task.classList.add("card"); // agregar a la lista
 
@@ -46,6 +51,7 @@ const createTask = ({ value, dateFormat }) => {
 
   const dateElement = document.createElement("span");
   dateElement.innerHTML = dateFormat;
+
   task.appendChild(taskContent);
   task.appendChild(dateElement);
   task.appendChild(deleteIcon());

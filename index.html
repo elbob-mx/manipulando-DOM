@@ -19,14 +19,11 @@
   </head>
   <body>
     <main>
-
       <div class="mainCard">
         <div class="title"><img src="./assets/rocket.svg" /></div>
 
         <div>
-
           <form action="">
-
             <input
               type="text"
               name="task"
@@ -36,20 +33,22 @@
               data-form-input
             />
 
-            <input type="datetime-local" data-form-date placeholder="DD/MMM/YYYY"/>
+            <input
+              type="datetime-local"
+              data-form-date
+              placeholder="DD/MMM/YYYY"
+            />
 
             <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
           </form>
         </div>
-        
-        <ul class="cardsList" data-list>        
-        </ul>
 
+        <ul class="cardsList" data-list></ul>
       </div>
     </main>
-    <script src= "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>
