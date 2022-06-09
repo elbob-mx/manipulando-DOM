@@ -1,6 +1,7 @@
 // importar funciones
 import checkComplete from "./checkComplete.js";
 import deleteIcon from "./deleteIcon.js";
+import { displayTasks } from "./readTasks.js";
 //---------------->
 
 export const addTask = (evento) => {
@@ -10,8 +11,8 @@ export const addTask = (evento) => {
   const input = document.querySelector("[data-form-input]");
   const calendar = document.querySelector("[data-form-date]");
 
-  const value = input.value; // valor agregado por usuario
-  const date = calendar.value; // valor del input calendario
+  const value = input.value; // tarea, texto agregado por el usuario
+  const date = calendar.value; // fecha establecida por usuario
   const dateFormat = moment(date).format("DD/MM/YYYY"); //formato fecha en el momento actual
 
   if( value === "" || date === ""){
@@ -27,12 +28,13 @@ export const addTask = (evento) => {
     dateFormat,
   };
 
+  list.innerText = "";
+
   const taskList = JSON.parse(localStorage.getItem("tasks")) || []; //si hay 'tareas', si no, array vacío
   taskList.push(taskObj);
   localStorage.setItem("tasks", JSON.stringify(taskList)); // localStorage solo admite 'strings'
 
-  const task = createTask(taskObj); //crear tarea
-  list.appendChild(task); // agregar a lista
+  displayTasks();
 };
 
 // función agregar tarea en lista de tareas
