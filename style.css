@@ -1,3 +1,58 @@
+@media screen and (min-width: 0) {
+
+  main, html {
+    background-color: #1F1F1F;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    font-family: monospace;
+    display: flex;
+    justify-content: left;
+    align-content: center;
+    margin-bottom: 20px;
+    color: #62E5B8;
+  }
+  
+  .inputForm {
+    border: none;
+    padding: 10px;
+    border: 1px solid #eee;
+    outline: none;
+    width: 35%;
+  }
+
+  .btnCreate {
+    padding: 10px 15px;
+    background-color: dimgray;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+    .card {
+      width: 70%;
+      padding: 15px;
+      /* box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16); */
+      background-color: #414A51;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: center;
+      margin: 5px 0px;
+      position: relative;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +62,6 @@
 
 main {
   background-color: #1F1F1F;
-  );
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -137,4 +191,5 @@ background-color: #62E5B8;
   width: 100%;
   padding: 15px;
   color: #b3b3b3;
+}
 }
