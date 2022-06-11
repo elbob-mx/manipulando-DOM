@@ -1,5 +1,12 @@
 @media screen and (min-width: 0) {
 
+  * {
+  /* margin: 0;
+  padding: 0; */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1rem;
+}
+
   main, html {
     background-color: #1F1F1F;
     width: 100vw;
@@ -12,10 +19,20 @@
   .title {
     font-family: monospace;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
     color: #62E5B8;
+  }
+
+  form {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
   }
   
   .inputForm {
@@ -49,7 +66,54 @@
       position: relative;
     }
 
+    .task {
+      padding: 20px;
+      color: #62E5B8;
+    }
+    
+    .icon {
+      cursor: pointer;
+    }
+    
+    .icon:hover {
+      color: rgba(62, 161, 219, 1);
+    }
+    
+    .completeIcon {
+      color: rgba(62, 161, 219, 1);
+    }
+    
+    .trashIcon:hover {
+      color: tomato;
+    }
+    
+    .deleteConfirmationPop {
+      position: relative;
+      background-color: rgba(255, 255, 255);
+      z-index: 99;
+      width: 100%;
+      top: -100px;
+      left: 0;
+    }
+    .deleteSpace {
+      position: relative;
+      width: 30%;
+    }
+    
+    .noTasks {
+      font-size: 48px;
+    }
+
+    .date{
+      font-weight: bold;
+      width: 100%;
+      padding: 15px;
+      color: #b3b3b3;
+    }
+
 }
+
+/* --------768 PX--------- */
 
 @media screen and (min-width: 768px) {
 
