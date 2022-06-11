@@ -12,10 +12,14 @@ const deleteIcon = (id) => {
 };
 
 const deleteTask = (id) => {
+const li = document.querySelector("[data-list]");
 const tasks = JSON.parse(localStorage.getItem("tasks"));
 const index = tasks.findIndex((item) => item.id === id);
 console.log(index);
 tasks.splice(index, 1);
+console.log(li);
+li.innerHTML = "";
+console.log(li);
 console.log(tasks);
 localStorage.setItem("tasks", JSON.stringify(tasks));
 displayTasks();
