@@ -6,7 +6,7 @@
 }
 
 main {
-  background-color: #123;
+  background-color: #1F1F1F;
   );
   width: 100vw;
   height: 100vh;
@@ -24,11 +24,11 @@ form {
 }
 
 .mainCard {
-  width: 50vw;
-  border-radius: 10px;
-  background-color: #fff;
+  width: 70vw;
+  /* border: 2px solid white; */
+  /* background-color: #fff; */
   padding: 50px;
-  box-shadow: 5px 5px 50px black;
+  /* box-shadow: 5px 5px 50px black; */
 }
 
 .title {
@@ -37,6 +37,11 @@ form {
   justify-content: left;
   align-content: center;
   margin-bottom: 20px;
+  color: #62E5B8;
+}
+
+hr {
+  margin-bottom: 40px;
 }
 
 .inputForm {
@@ -61,7 +66,7 @@ form {
 }
 
 .btnCreate:hover {
-background-color: dodgerblue;
+background-color: #62E5B8;
 }
 
 .cardsList {
@@ -78,7 +83,9 @@ background-color: dodgerblue;
 .card {
   width: 90%;
   padding: 15px;
-  box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16);
+  /* box-shadow: 2px 4px 4px 4px rgba(71, 71, 71, 0.16); */
+  background-color: #414A51;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -88,7 +95,8 @@ background-color: dodgerblue;
 }
 
 .task {
-  padding: 10px;
+  padding: 20px;
+  color: #62E5B8;
 }
 
 .icon {
@@ -125,6 +133,8 @@ background-color: dodgerblue;
 }
 
 .date{
+  font-weight: bold;
   width: 100%;
   padding: 15px;
+  color: #b3b3b3;
 }
